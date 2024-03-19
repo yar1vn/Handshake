@@ -8,6 +8,8 @@
 protocol JobsAPI {
     var networkController: NetworkController { get }
     func getJobs(completion: @escaping (Result<Jobs, NetworkError>) -> Void)
+    
+    func getJobs() async throws -> Jobs
 }
 
 class JobsAPIImpl: JobsAPI {
@@ -17,6 +19,11 @@ class JobsAPIImpl: JobsAPI {
         self.networkController = networkController
     }
 
+    func getJobs() async throws -> Jobs {
+        let url = "https://ios-interview.joinhandshake-internal.com/jobs"
+        return try await networkController.get(urlString: url)
+    }
+    
     func getJobs(completion: @escaping (Result<Jobs, NetworkError>) -> Void) {
         let url = "https://ios-interview.joinhandshake-internal.com/jobs"
         networkController.get(urlString: url, completion: completion)

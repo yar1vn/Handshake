@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		09E464792BAA405A00003A75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E464782BAA405A00003A75 /* AppDelegate.swift */; };
 		09E4647B2BAA405A00003A75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E4647A2BAA405A00003A75 /* SceneDelegate.swift */; };
-		09E4647D2BAA405A00003A75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E4647C2BAA405A00003A75 /* ViewController.swift */; };
+		09E4647D2BAA405A00003A75 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E4647C2BAA405A00003A75 /* JobsViewController.swift */; };
 		09E464802BAA405A00003A75 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 09E4647F2BAA405A00003A75 /* Base */; };
 		09E464822BAA405B00003A75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09E464812BAA405B00003A75 /* Assets.xcassets */; };
 		09E464852BAA405B00003A75 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 09E464842BAA405B00003A75 /* Base */; };
 		09E464902BAA405B00003A75 /* HandshakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E4648F2BAA405B00003A75 /* HandshakeTests.swift */; };
 		09E4649A2BAA405B00003A75 /* HandshakeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E464992BAA405B00003A75 /* HandshakeUITests.swift */; };
 		09E4649C2BAA405B00003A75 /* HandshakeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E4649B2BAA405B00003A75 /* HandshakeUITestsLaunchTests.swift */; };
+		09E464A92BAA409400003A75 /* jobs.json in Resources */ = {isa = PBXBuildFile; fileRef = 09E464A82BAA409400003A75 /* jobs.json */; };
+		09E464AB2BAA414800003A75 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E464AA2BAA414800003A75 /* NetworkController.swift */; };
+		09E464AD2BAA415300003A75 /* JobsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E464AC2BAA415300003A75 /* JobsAPI.swift */; };
+		09E464AF2BAA41C800003A75 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E464AE2BAA41C800003A75 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +43,7 @@
 		09E464752BAA405A00003A75 /* Handshake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Handshake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E464782BAA405A00003A75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09E4647A2BAA405A00003A75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		09E4647C2BAA405A00003A75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		09E4647C2BAA405A00003A75 /* JobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
 		09E4647F2BAA405A00003A75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09E464812BAA405B00003A75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09E464842BAA405B00003A75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +53,10 @@
 		09E464952BAA405B00003A75 /* HandshakeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HandshakeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E464992BAA405B00003A75 /* HandshakeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandshakeUITests.swift; sourceTree = "<group>"; };
 		09E4649B2BAA405B00003A75 /* HandshakeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandshakeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		09E464A82BAA409400003A75 /* jobs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jobs.json; sourceTree = "<group>"; };
+		09E464AA2BAA414800003A75 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		09E464AC2BAA415300003A75 /* JobsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsAPI.swift; sourceTree = "<group>"; };
+		09E464AE2BAA41C800003A75 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +107,10 @@
 		09E464772BAA405A00003A75 /* Handshake */ = {
 			isa = PBXGroup;
 			children = (
-				09E464782BAA405A00003A75 /* AppDelegate.swift */,
-				09E4647A2BAA405A00003A75 /* SceneDelegate.swift */,
-				09E4647C2BAA405A00003A75 /* ViewController.swift */,
-				09E4647E2BAA405A00003A75 /* Main.storyboard */,
-				09E464812BAA405B00003A75 /* Assets.xcassets */,
-				09E464832BAA405B00003A75 /* LaunchScreen.storyboard */,
+				09E464B32BAA441200003A75 /* View */,
+				09E464B22BAA440C00003A75 /* Controllers */,
+				09E464B12BAA43FD00003A75 /* Model */,
+				09E464B02BAA43F300003A75 /* Misc */,
 				09E464862BAA405B00003A75 /* Info.plist */,
 			);
 			path = Handshake;
@@ -113,6 +119,7 @@
 		09E4648E2BAA405B00003A75 /* HandshakeTests */ = {
 			isa = PBXGroup;
 			children = (
+				09E464A82BAA409400003A75 /* jobs.json */,
 				09E4648F2BAA405B00003A75 /* HandshakeTests.swift */,
 			);
 			path = HandshakeTests;
@@ -125,6 +132,43 @@
 				09E4649B2BAA405B00003A75 /* HandshakeUITestsLaunchTests.swift */,
 			);
 			path = HandshakeUITests;
+			sourceTree = "<group>";
+		};
+		09E464B02BAA43F300003A75 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				09E464782BAA405A00003A75 /* AppDelegate.swift */,
+				09E4647A2BAA405A00003A75 /* SceneDelegate.swift */,
+				09E4647E2BAA405A00003A75 /* Main.storyboard */,
+				09E464812BAA405B00003A75 /* Assets.xcassets */,
+				09E464832BAA405B00003A75 /* LaunchScreen.storyboard */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		09E464B12BAA43FD00003A75 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				09E464AE2BAA41C800003A75 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		09E464B22BAA440C00003A75 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				09E464AA2BAA414800003A75 /* NetworkController.swift */,
+				09E464AC2BAA415300003A75 /* JobsAPI.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		09E464B32BAA441200003A75 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				09E4647C2BAA405A00003A75 /* JobsViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09E464A92BAA409400003A75 /* jobs.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +303,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09E4647D2BAA405A00003A75 /* ViewController.swift in Sources */,
+				09E464AB2BAA414800003A75 /* NetworkController.swift in Sources */,
+				09E4647D2BAA405A00003A75 /* JobsViewController.swift in Sources */,
 				09E464792BAA405A00003A75 /* AppDelegate.swift in Sources */,
+				09E464AF2BAA41C800003A75 /* Model.swift in Sources */,
+				09E464AD2BAA415300003A75 /* JobsAPI.swift in Sources */,
 				09E4647B2BAA405A00003A75 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

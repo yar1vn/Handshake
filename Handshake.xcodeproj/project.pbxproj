@@ -13,13 +13,15 @@
 		09E464802BAA405A00003A75 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 09E4647F2BAA405A00003A75 /* Base */; };
 		09E464822BAA405B00003A75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09E464812BAA405B00003A75 /* Assets.xcassets */; };
 		09E464852BAA405B00003A75 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 09E464842BAA405B00003A75 /* Base */; };
-		09E464902BAA405B00003A75 /* HandshakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E4648F2BAA405B00003A75 /* HandshakeTests.swift */; };
+		09E464902BAA405B00003A75 /* JobsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E4648F2BAA405B00003A75 /* JobsAPITests.swift */; };
 		09E4649A2BAA405B00003A75 /* HandshakeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E464992BAA405B00003A75 /* HandshakeUITests.swift */; };
 		09E4649C2BAA405B00003A75 /* HandshakeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E4649B2BAA405B00003A75 /* HandshakeUITestsLaunchTests.swift */; };
-		09E464A92BAA409400003A75 /* jobs.json in Resources */ = {isa = PBXBuildFile; fileRef = 09E464A82BAA409400003A75 /* jobs.json */; };
 		09E464AB2BAA414800003A75 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E464AA2BAA414800003A75 /* NetworkController.swift */; };
 		09E464AD2BAA415300003A75 /* JobsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E464AC2BAA415300003A75 /* JobsAPI.swift */; };
 		09E464AF2BAA41C800003A75 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E464AE2BAA41C800003A75 /* Model.swift */; };
+		09E464B52BAA49BF00003A75 /* MockNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E464B42BAA49BF00003A75 /* MockNetworkController.swift */; };
+		09E464BB2BAA4ED600003A75 /* jobs_malformed.json in Resources */ = {isa = PBXBuildFile; fileRef = 09E464BA2BAA4ED600003A75 /* jobs_malformed.json */; };
+		09E464BC2BAA4F5100003A75 /* jobs.json in Resources */ = {isa = PBXBuildFile; fileRef = 09E464A82BAA409400003A75 /* jobs.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +51,7 @@
 		09E464842BAA405B00003A75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09E464862BAA405B00003A75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09E4648B2BAA405B00003A75 /* HandshakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HandshakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		09E4648F2BAA405B00003A75 /* HandshakeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandshakeTests.swift; sourceTree = "<group>"; };
+		09E4648F2BAA405B00003A75 /* JobsAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsAPITests.swift; sourceTree = "<group>"; };
 		09E464952BAA405B00003A75 /* HandshakeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HandshakeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E464992BAA405B00003A75 /* HandshakeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandshakeUITests.swift; sourceTree = "<group>"; };
 		09E4649B2BAA405B00003A75 /* HandshakeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandshakeUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -57,6 +59,8 @@
 		09E464AA2BAA414800003A75 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		09E464AC2BAA415300003A75 /* JobsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsAPI.swift; sourceTree = "<group>"; };
 		09E464AE2BAA41C800003A75 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		09E464B42BAA49BF00003A75 /* MockNetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkController.swift; sourceTree = "<group>"; };
+		09E464BA2BAA4ED600003A75 /* jobs_malformed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jobs_malformed.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +123,8 @@
 		09E4648E2BAA405B00003A75 /* HandshakeTests */ = {
 			isa = PBXGroup;
 			children = (
-				09E464A82BAA409400003A75 /* jobs.json */,
-				09E4648F2BAA405B00003A75 /* HandshakeTests.swift */,
+				09E4648F2BAA405B00003A75 /* JobsAPITests.swift */,
+				09E464B42BAA49BF00003A75 /* MockNetworkController.swift */,
 			);
 			path = HandshakeTests;
 			sourceTree = "<group>";
@@ -142,6 +146,8 @@
 				09E4647E2BAA405A00003A75 /* Main.storyboard */,
 				09E464812BAA405B00003A75 /* Assets.xcassets */,
 				09E464832BAA405B00003A75 /* LaunchScreen.storyboard */,
+				09E464A82BAA409400003A75 /* jobs.json */,
+				09E464BA2BAA4ED600003A75 /* jobs_malformed.json */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -278,6 +284,8 @@
 				09E464822BAA405B00003A75 /* Assets.xcassets in Resources */,
 				09E464852BAA405B00003A75 /* Base in Resources */,
 				09E464802BAA405A00003A75 /* Base in Resources */,
+				09E464BB2BAA4ED600003A75 /* jobs_malformed.json in Resources */,
+				09E464BC2BAA4F5100003A75 /* jobs.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +293,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09E464A92BAA409400003A75 /* jobs.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +323,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09E464902BAA405B00003A75 /* HandshakeTests.swift in Sources */,
+				09E464B52BAA49BF00003A75 /* MockNetworkController.swift in Sources */,
+				09E464902BAA405B00003A75 /* JobsAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

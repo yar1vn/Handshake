@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit.UIImage
 @testable import Handshake
 
 class MockNetworkController: NetworkController {
@@ -35,6 +36,10 @@ class MockNetworkController: NetworkController {
         } catch {
             completion(.failure(.JSONError(error)))
         }
+    }
+    
+    func getImage(url: URL) async throws -> UIImage {
+        return UIImage()
     }
 }
 

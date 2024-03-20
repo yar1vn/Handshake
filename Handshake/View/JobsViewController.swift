@@ -52,7 +52,7 @@ class JobsViewController: UITableViewController {
             do {
                 state = .loading
                 let jobs = try await api.getJobs()
-                // pause for a second before refreshing the table to avoid UI glitches when loading to quicky
+                // pause for a second before refreshing the table to avoid UI glitches when loading too quicky
                 try await Task.sleep(nanoseconds: 1 * NSEC_PER_SEC)
                 state = State(jobs)
                 
@@ -114,6 +114,7 @@ extension JobsViewController {
             cell.jobImageView.image = image
         } else {
             try await imageLoader.loadImage(for: url)
+            try await Task.sleep(nanoseconds: 1 * NSEC_PER_SEC/5) // delay a bit so the animation is visible
             tableView.reloadRows(at: [indexPath], with: .fade)
         }
     }

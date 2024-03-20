@@ -116,25 +116,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jC-jX-Pge">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="210" translatesAutoresizingMaskIntoConstraints="NO" id="5dh-3b-miB">
-                                        <rect key="frame" x="8" y="0.0" width="393" height="204.66666666666666"/>
+                                        <rect key="frame" x="8" y="0.0" width="393" height="170.33333333333334"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="y5K-yM-tZA">
-                                        <rect key="frame" x="27.666666666666657" y="212.66666666666666" width="353.66666666666674" height="265.33333333333337"/>
+                                        <rect key="frame" x="27.666666666666657" y="178.33333333333334" width="353.66666666666674" height="265.33333333333326"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" axis="vertical" distribution="fillProportionally" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="UpX-Qx-Htw">
                                                 <rect key="frame" x="0.0" y="0.0" width="103.33333333333333" height="75.333333333333329"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5II-8z-KDF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="103.33333333333333" height="46.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="103.33333333333333" height="47"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salary" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGl-v2-SQV">
-                                                        <rect key="frame" x="0.0" y="54.66666666666665" width="47.333333333333336" height="20.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="55.000000000000007" width="47.333333333333336" height="20.333333333333336"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                                         <nil key="highlightedColor"/>
@@ -159,7 +159,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iv4-BQ-Y8E">
-                                                <rect key="frame" x="0.0" y="197.00000000000003" width="120" height="20.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="196.99999999999997" width="120" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -173,7 +173,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ix-7f-R1r">
-                                        <rect key="frame" x="341" y="212.66666666666666" width="52" height="34.333333333333343"/>
+                                        <rect key="frame" x="341" y="178.33333333333334" width="52" height="34.333333333333343"/>
                                         <color key="tintColor" systemColor="systemYellowColor"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button" image="star" catalog="system"/>
@@ -187,7 +187,7 @@
                                     <constraint firstItem="y5K-yM-tZA" firstAttribute="top" secondItem="5dh-3b-miB" secondAttribute="bottom" constant="8" symbolic="YES" id="6ta-lC-Zft"/>
                                     <constraint firstItem="5Ix-7f-R1r" firstAttribute="top" secondItem="5dh-3b-miB" secondAttribute="bottom" constant="8" symbolic="YES" id="9a9-BN-BlL"/>
                                     <constraint firstItem="PAN-Hm-EkN" firstAttribute="trailing" secondItem="5Ix-7f-R1r" secondAttribute="trailing" id="FS6-Mn-Cd2"/>
-                                    <constraint firstItem="5dh-3b-miB" firstAttribute="height" relation="lessThanOrEqual" secondItem="uNw-K2-66f" secondAttribute="height" multiplier="0.25" id="HE4-zc-Usa"/>
+                                    <constraint firstItem="5dh-3b-miB" firstAttribute="height" relation="lessThanOrEqual" secondItem="uNw-K2-66f" secondAttribute="height" multiplier="0.2" id="HE4-zc-Usa"/>
                                     <constraint firstItem="5dh-3b-miB" firstAttribute="centerX" secondItem="uNw-K2-66f" secondAttribute="centerX" id="eVv-ZR-9QL"/>
                                     <constraint firstItem="5dh-3b-miB" firstAttribute="top" secondItem="7jC-jX-Pge" secondAttribute="top" id="g0n-wk-qax"/>
                                     <constraint firstItem="y5K-yM-tZA" firstAttribute="width" secondItem="uNw-K2-66f" secondAttribute="width" multiplier="0.9" id="gvb-HB-9yN"/>
@@ -202,7 +202,7 @@
                         <viewLayoutGuide key="safeArea" id="q1D-0s-ygh"/>
                         <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="q1D-0s-ygh" firstAttribute="bottom" secondItem="7jC-jX-Pge" secondAttribute="bottom" id="F64-pS-YFC"/>
+                            <constraint firstAttribute="bottom" secondItem="7jC-jX-Pge" secondAttribute="bottom" id="F64-pS-YFC"/>
                             <constraint firstItem="7jC-jX-Pge" firstAttribute="leading" secondItem="3K0-Aa-whM" secondAttribute="leading" id="Mpa-9N-9if"/>
                             <constraint firstAttribute="trailing" secondItem="7jC-jX-Pge" secondAttribute="trailing" id="O83-ZX-sEO"/>
                             <constraint firstItem="7jC-jX-Pge" firstAttribute="top" secondItem="3K0-Aa-whM" secondAttribute="top" id="RuD-nr-qul"/>

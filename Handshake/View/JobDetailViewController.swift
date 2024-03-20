@@ -19,27 +19,32 @@ class JobDetailViewController: UIViewController {
     @IBOutlet weak var recruiterLabel: UILabel!
     
     private let job: Job
-    private let companyImage: UIImage?
+    private let imageLoader: ImageLoader
     
-    init?(job: Job, companyImage: UIImage?, coder: NSCoder) {
+    init?(job: Job, imageLoader: ImageLoader, coder: NSCoder) {
         self.job = job
-        self.companyImage = companyImage
+        self.imageLoader = imageLoader
         super.init(coder: coder)
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()        
-        bind(job: job, companyImage: companyImage)
+        super.viewDidLoad()
+        bind(job: job)
     }
     
-    private func bind(job: Job, companyImage: UIImage?) {
-        imageView.image = companyImage
+    private func bind(job: Job) {
         jobTitleLabel.text = job.title
         salaryLabel.text = job.salary
         companyLabel.text = job.employer.name
         addressLabel.text = job.employer.address
         jobDescriptionLabel.text = job.employer.description
         recruiterLabel.text = job.recruiter.firstName
+        
+        Task {
+            if let url = job.employer.image {
+                imageView.image = try await imageLoader.loadImage(for: url)
+            }
+        }
     }
     
     required init?(coder: NSCoder) {

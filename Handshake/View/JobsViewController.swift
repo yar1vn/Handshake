@@ -26,30 +26,15 @@ private enum State {
     }
 }
 
-private class ImageCache {
-    private let imageCache = NSCache<NSURL, UIImage>()
-    
-    subscript(url: URL?) -> UIImage? {
-        get {
-            guard let url = url else { return nil }
-            return imageCache.object(forKey: url as NSURL)
-        }
-        set {
-            guard let url, let image = newValue else { return }
-            imageCache.setObject(image, forKey: url as NSURL)
-        }
-    }
-}
-
 class JobsViewController: UITableViewController {
     private let api: JobsAPI = JobsAPIImpl()
-    private let cache = ImageCache()
+    private let imageLoader: ImageLoader = ImageLoaderImpl()
     
     private var state: State = .empty {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-                //self.updateEmptyOrErrorState()
+                // TODO: self.showEmptyOrErrorState()
             }
         }
     }
@@ -115,8 +100,8 @@ extension JobsViewController {
         guard case let .loaded(jobs) = state else { return }
         let job = jobs[indexPath.item]
         
-        guard let jobDetailsViewController = storyboard?.instantiateViewController(identifier: JobDetailViewController.storyboardIdentifier, creator: { coder in
-            JobDetailViewController(job: job, companyImage: self.cache[job.employer.image], coder: coder)
+        guard let jobDetailsViewController = storyboard?.instantiateViewController(identifier: JobDetailViewController.storyboardIdentifier, creator: { [unowned self] coder in
+            JobDetailViewController(job: job, imageLoader: self.imageLoader, coder: coder)
         }) else {
             fatalError("Cannot instantiate JobDetailViewController")
         }
@@ -143,12 +128,12 @@ extension JobsViewController {
     private func loadImage(for job: Job, at indexPath: IndexPath) async throws {
         guard let url = job.employer.image else { return }
         
-        if let image = cache[url] {
+        // hit the cache before making a network call
+        if let image = imageLoader[url] {
             let cell = tableView.cellForRow(at: indexPath) as! JobCell
             cell.jobImageView.image = image
         } else {
-            let image = try await api.getImage(for: url)
-            cache[url] = image
+            try await imageLoader.loadImage(for: url)
             tableView.reloadRows(at: [indexPath], with: .fade)
         }
     }

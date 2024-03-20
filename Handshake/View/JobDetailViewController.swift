@@ -18,30 +18,30 @@ class JobDetailViewController: UIViewController {
     @IBOutlet weak var jobDescriptionLabel: UILabel!
     @IBOutlet weak var recruiterLabel: UILabel!
     
-    private let job: Job
+    private let jobViewModel: JobViewModel
     private let imageLoader: ImageLoader
     
     init?(job: Job, imageLoader: ImageLoader, coder: NSCoder) {
-        self.job = job
+        self.jobViewModel = JobViewModel(job: job)
         self.imageLoader = imageLoader
         super.init(coder: coder)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind(job: job)
+        bind(jobViewModel)
     }
     
-    private func bind(job: Job) {
-        jobTitleLabel.text = job.title
-        salaryLabel.text = job.salary
-        companyLabel.text = job.employer.name
-        addressLabel.text = job.employer.address
-        jobDescriptionLabel.text = job.employer.description
-        recruiterLabel.text = job.recruiter.firstName
+    private func bind(_ jobViewModel: JobViewModel) {
+        jobTitleLabel.text = jobViewModel.job.title
+        salaryLabel.text = jobViewModel.formattedSalary
+        companyLabel.text = jobViewModel.job.employer.name
+        addressLabel.text = jobViewModel.job.employer.address
+        jobDescriptionLabel.text = jobViewModel.job.employer.description
+        recruiterLabel.attributedText = jobViewModel.attributedRecruiterAndEmail
         
         Task {
-            if let url = job.employer.image {
+            if let url = jobViewModel.job.employer.image {
                 imageView.image = try await imageLoader.loadImage(for: url)
             }
         }

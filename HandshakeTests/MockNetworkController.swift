@@ -43,7 +43,7 @@ class MockNetworkController: NetworkController {
     }
 }
 
-// get JSON from file
+// get test JSON from file
 extension MockNetworkController {
     enum DecodeError: Error {
         case invalidFile(String)

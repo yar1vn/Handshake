@@ -25,6 +25,7 @@
 		09E464BE2BAA9B7100003A75 /* JobDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E464BD2BAA9B7100003A75 /* JobDetailViewController.swift */; };
 		09E464C02BAAA4CE00003A75 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E464BF2BAAA4CE00003A75 /* ImageCache.swift */; };
 		09E464C22BAAA4FC00003A75 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E464C12BAAA4FC00003A75 /* ImageLoader.swift */; };
+		09E464C42BAAA92F00003A75 /* JobViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E464C32BAAA92F00003A75 /* JobViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		09E464BD2BAA9B7100003A75 /* JobDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailViewController.swift; sourceTree = "<group>"; };
 		09E464BF2BAAA4CE00003A75 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		09E464C12BAAA4FC00003A75 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		09E464C32BAAA92F00003A75 /* JobViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +151,6 @@
 			children = (
 				09E464782BAA405A00003A75 /* AppDelegate.swift */,
 				09E4647A2BAA405A00003A75 /* SceneDelegate.swift */,
-				09E4647E2BAA405A00003A75 /* Main.storyboard */,
 				09E464812BAA405B00003A75 /* Assets.xcassets */,
 				09E464832BAA405B00003A75 /* LaunchScreen.storyboard */,
 				09E464A82BAA409400003A75 /* jobs.json */,
@@ -162,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				09E464AE2BAA41C800003A75 /* Model.swift */,
+				09E464C32BAAA92F00003A75 /* JobViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,6 +182,7 @@
 		09E464B32BAA441200003A75 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				09E4647E2BAA405A00003A75 /* Main.storyboard */,
 				09E4647C2BAA405A00003A75 /* JobsViewController.swift */,
 				09E464BD2BAA9B7100003A75 /* JobDetailViewController.swift */,
 			);
@@ -323,6 +326,7 @@
 				09E4647D2BAA405A00003A75 /* JobsViewController.swift in Sources */,
 				09E464C02BAAA4CE00003A75 /* ImageCache.swift in Sources */,
 				09E464BE2BAA9B7100003A75 /* JobDetailViewController.swift in Sources */,
+				09E464C42BAAA92F00003A75 /* JobViewModel.swift in Sources */,
 				09E464792BAA405A00003A75 /* AppDelegate.swift in Sources */,
 				09E464C22BAAA4FC00003A75 /* ImageLoader.swift in Sources */,
 				09E464AF2BAA41C800003A75 /* Model.swift in Sources */,

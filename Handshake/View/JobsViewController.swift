@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Represent the UI state with a deterministic property
 private enum State {
     case loaded(jobs: Jobs)
     case loading
@@ -20,8 +21,8 @@ private enum State {
 
     var count: Int {
         switch self {
-        case .loaded(let jobs): return jobs.count
-        default: return 0
+        case .loaded(let jobs): jobs.count
+        default: 0
         }
     }
 }
@@ -32,10 +33,8 @@ class JobsViewController: UITableViewController {
     
     private var state: State = .empty {
         didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                // TODO: self.showEmptyOrErrorState()
-            }
+            self.tableView.reloadData()
+            // TODO: Show an empty message or an error for the appropriate states
         }
     }
     
@@ -47,19 +46,17 @@ class JobsViewController: UITableViewController {
     }
     
     @objc private func getJobs() {
-        DispatchQueue.main.async {
-            self.tableView.refreshControl?.beginRefreshing()
-        }
-        
         Task {
+            self.tableView.refreshControl?.beginRefreshing()
+
             do {
                 state = .loading
                 let jobs = try await api.getJobs()
+                // pause for a second before refreshing the table to avoid UI glitches when loading to quicky
+                try await Task.sleep(nanoseconds: 1 * NSEC_PER_SEC)
                 state = State(jobs)
                 
-                DispatchQueue.main.async {
-                    self.tableView.refreshControl?.endRefreshing()
-                }
+                self.tableView.refreshControl?.endRefreshing()
             } catch {
                 state = .error(error)
             }
@@ -73,21 +70,6 @@ class JobsViewController: UITableViewController {
                                             for: .valueChanged)
     }
 }
-
-class JobCell: UITableViewCell {
-    static let reusableIdentifier = "job"
-    
-    @IBOutlet var jobImageView: UIImageView!
-    @IBOutlet var jobTitleLabel: UILabel!
-    @IBOutlet var employerLabel: UILabel!
-    @IBOutlet var favoriteButton: UIButton!
-    
-    func bind(job: Job) {
-        jobTitleLabel.text = job.title
-        employerLabel.text = job.employer.name
-    }
-}
-
 
 // MARK: UITableViewController
 
@@ -112,9 +94,7 @@ extension JobsViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: JobCell.reusableIdentifier, for: indexPath) as! JobCell
         
-        guard case let .loaded(jobs) = state else {
-            return cell
-        }
+        guard case let .loaded(jobs) = state else { return cell }
         
         let job = jobs[indexPath.row]
         cell.bind(job: job)
@@ -136,5 +116,19 @@ extension JobsViewController {
             try await imageLoader.loadImage(for: url)
             tableView.reloadRows(at: [indexPath], with: .fade)
         }
+    }
+}
+
+class JobCell: UITableViewCell {
+    static let reusableIdentifier = "job"
+    
+    @IBOutlet var jobImageView: UIImageView!
+    @IBOutlet var jobTitleLabel: UILabel!
+    @IBOutlet var employerLabel: UILabel!
+    @IBOutlet var favoriteButton: UIButton!
+    
+    func bind(job: Job) {
+        jobTitleLabel.text = job.title
+        employerLabel.text = job.employer.name
     }
 }
